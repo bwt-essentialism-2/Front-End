@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import {selected} from '../actions/actions';
 
 
 const ValueCard = props => {
@@ -17,11 +18,14 @@ const ValueCard = props => {
             );
         console.log("clicked", isClicked);
     }
+ 
 
 const select = () => {
-   // props.selectItem(props.value.id);
-    props.selectItemList(props.value.id);
+   props.selected(props.value.id);
 }
+
+ 
+
 
 const setClickedClass = () => {
     if (isClicked === true){
@@ -57,9 +61,10 @@ const setClickedClass = () => {
 const mapStateToProps = state => {
 
     return {
-        values: state.reducer.values[0]
+        values: state.reducer.values[0],
+        selectedArray: state.reducer.selectedArray
     }
 }
 
 
-export default connect(mapStateToProps, {})(ValueCard)
+export default connect(mapStateToProps, {selected})(ValueCard)

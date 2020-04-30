@@ -40,6 +40,15 @@ export const addItem = (newItem) => {
     
 }
 
+export const selected = (selectedArray) => {
+    return dispatch => {
+        dispatch({
+            type: 'SELECTED_ARRAY',
+            payload: selectedArray
+        })
+    }
+}
+
 // export const selectItem = (selectedItem) => {
 //     return dispatch => {
 //         dispatch({

@@ -1,7 +1,8 @@
 import React,{ useContext } from 'react';
 import DashboardCard from './DashboardCard';
-import { connect } from 'react-redux';
 import {ValuesContext} from "../contexts/index";
+import { fetchData } from '../actions/actions';
+import { connect } from 'react-redux';
 
 
 
@@ -9,12 +10,12 @@ import {ValuesContext} from "../contexts/index";
 const Dashboard = props => {
     console.log("value", props.values);
 
-    const {selected} = useContext(ValuesContext);
-    console.log("selected", selected);
+
+    console.log("selected", props.selected);
 
 
     return (
-        <ValuesContext.Provider value={[]}>
+        
         <div className='container-fluid d-flex justify-content-center'>
             <div className='row'>
                 <div className='col-md-4'>
@@ -28,9 +29,18 @@ const Dashboard = props => {
                 </div>
             </div>
         </div>
-        </ValuesContext.Provider>
+    
     )
 }
 
 
-export default Dashboard;
+const mapStateToProps = state => {
+    console.log(state);
+    return {
+        values: state.reducer.values[0],
+        selected: state.reducer.selectedArray
+    }
+}
+
+
+export default connect(mapStateToProps, { fetchData })(Dashboard);
