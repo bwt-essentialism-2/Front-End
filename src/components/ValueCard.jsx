@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import {selectItem} from '../actions/actions';
+import React, {useState} from "react";
 import {connect} from 'react-redux';
 
 import Card from '@material-ui/core/Card';
@@ -10,18 +9,38 @@ import Typography from '@material-ui/core/Typography';
 
 const ValueCard = props => {
 
+    const [isClicked, setIsClicked] = useState(false);
+
+    const toggleItem = () => {
+        {isClicked ? setIsClicked(false) : setIsClicked(true)}
+        console.log( "value",props.value.value
+            );
+        console.log("clicked", isClicked);
+    }
+
 const select = () => {
    // props.selectItem(props.value.id);
     props.selectItemList(props.value.id);
 }
 
+const setClickedClass = () => {
+    if (isClicked === true){
+        return "clicked";
+    }
+    else {
+        return "unclicked";
+    }
+}
+
     return (
-        <Card id = "valueCard" onClick = {select} 
-          
+        <Card id = "valueCard" onClick={() => { select(); toggleItem();}}
+        
+
+
             >
       <CardActionArea>
 
-        <CardContent>
+        <CardContent className = {setClickedClass()}>
           <Typography gutterBottom variant="h5" component="h2">
             {props.value.value}
 
@@ -43,4 +62,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { selectItem })(ValueCard)
+export default connect(mapStateToProps, {})(ValueCard)

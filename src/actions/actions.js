@@ -40,11 +40,11 @@ export const addItem = (newItem) => {
     
 }
 
-export const selectItem = (selectedItem) => {
-    return dispatch => {
-        dispatch({
-            type: 'SELECT_ITEM',
-            payload: selectedItem
-        })
-    }
-}
+// export const selectItem = (selectedItem) => {
+//     return dispatch => {
+//         dispatch({
+//             type: 'SELECT_ITEM',
+//             payload: selectedItem
+//         })
+//     }
+// }
