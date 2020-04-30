@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { axiosWithAuth } from "../utils/axiosAuth";
 import {addItem} from "../actions/actions";
 import { connect } from 'react-redux';
 
@@ -37,21 +36,11 @@ const ValueForm = props => {
         description: null
 
       }
-      axiosWithAuth()
-      .post("https://essentialism-bwt.herokuapp.com/api/values", newPost )
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(err, "err");
-        console.log(props.values);
-
-      })
+     
 
       props.addItem(newPost);
 
       
-      setNewValue("");
     }
 
 

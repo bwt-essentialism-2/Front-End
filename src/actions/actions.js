@@ -22,10 +22,20 @@ export const fetchData = () => {
 
 export const addItem = (newItem) => {
     return dispatch => {
-        dispatch({
+        axiosWithAuth()
+        .post("https://essentialism-bwt.herokuapp.com/api/values", newItem )
+        .then(res => {
+          console.log(res);
+          dispatch({
             type: 'ADD_ITEM',
             payload: newItem
         })
+        })
+        .catch(err => {
+          console.log(err, "err");
+  
+        })
+        
     }
     
 }
