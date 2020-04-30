@@ -1,8 +1,7 @@
 import React, {Component, useContext} from 'react';
-// import reactDOM from 'react-dom';
 import './DashboardStyle.css';
 import EssentialCard from './EssentialCard';
-// import DashboardCard from './DashboardCard'
+import { DashContext } from "../contexts/index";
 
 class SingleCard extends Component {
 constructor(props){
@@ -15,6 +14,15 @@ constructor(props){
     this.deleteItem = this.deleteItem.bind(this);
 
 }
+
+// componentDidMount(){
+// axiosWithAuth()
+//         .post("https://essentialism-bwt.herokuapp.com/api/users/2/projects", newItem)
+//         .then(res => {
+//             console.log(res);
+//             this.setState({newItem: res.data})
+//         })
+//     }
 
 addItem(e) {
     if (this.inputElement.value !== '') {
@@ -86,11 +94,3 @@ addItem(e) {
 export default SingleCard;
 
 
-// componentDidMount(){
-// axiosWithAuth()
-//         .post("https://essentialism-bwt.herokuapp.com/api/users/2/projects", newItem)
-//         .then(res => {
-//             console.log(res);
-//             this.setState({newItem: res.data})
-//         })
-//     }

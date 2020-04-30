@@ -113,3 +113,8 @@
   flex-direction: row;
   width: 10%;
 }
+
+#valueCard .clicked {
+  background-color: lightblue;
+  
+}

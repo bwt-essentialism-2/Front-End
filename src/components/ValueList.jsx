@@ -1,12 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect } from "react";
 import ValueCard from "./ValueCard";
 import ValueForm from "./ValueForm";
 import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
-import { fetchData, selectItem } from '../actions/actions';
+import { fetchData } from '../actions/actions';
 import { connect } from 'react-redux';
-import { axiosWithAuth } from "../utils/axiosAuth";
-import { ValuesContext } from "../contexts";
+
 
 
 const ValueList = props => {
@@ -70,4 +69,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { fetchData, selectItem })(ValueList);
+export default connect(mapStateToProps, { fetchData })(ValueList);
