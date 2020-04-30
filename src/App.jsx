@@ -173,8 +173,17 @@ const fetchingData = () => {
 
   return (
     <>
-    <ValuesContext.Provider value = {{selected, fetchingData, initialState}}>
-    <ButtonAppBar />
+        <ButtonAppBar />
+
+    <Route path='/'>
+          <Login 
+            formValues={formValues}
+            onChangeHandler={onChangeHandler}
+            onSubmitHandler={onSubmitHandler}
+            formErrors={formErrors}
+          />
+        </Route>
+     <ValuesContext.Provider value = {{selected, fetchingData, initialState}}>
     <Switch>
 
       <Route path='/dashboard'>
@@ -198,17 +207,19 @@ const fetchingData = () => {
         <SingleCard />
         </Route>
         </DashContext.Provider>
+
+        
   
-        <Route path='/'>
+        {/* <Route path='/'>
           <Login 
             formValues={formValues}
             onChangeHandler={onChangeHandler}
             onSubmitHandler={onSubmitHandler}
             formErrors={formErrors}
           />
-        </Route>
+        </Route> */}
       </Switch>
-      </ValuesContext.Provider>
+      </ValuesContext.Provider> */}
      </>
   );
 }
