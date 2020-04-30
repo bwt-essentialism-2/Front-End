@@ -25,7 +25,8 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 values: [...state.values, action.payload]
 
-            }
+            };
+           
 
         default:
             return state;
