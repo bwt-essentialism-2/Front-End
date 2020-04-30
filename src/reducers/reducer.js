@@ -1,6 +1,7 @@
 export const initialState = {
     values: [
     ],
+    selectedArray: []
 
 };
 
@@ -26,6 +27,12 @@ export const reducer = (state = initialState, action) => {
                 values: [...state.values, action.payload]
 
             };
+        case 'SELECTED_ARRAY':
+            return {
+                ...state,
+                values: [...state.values],
+                selectedArray: [...state.selectedArray, action.payload]
+            }
            
 
         default:

@@ -48,14 +48,6 @@ function App() {
 
   const history = useHistory()
 
-  const [selected, setSelected] = useState([]);
-
-  const selectItemList = (id) => {
-    setSelected([...selected, id]);
-
-   // props.selectItem(selected);
-    
-}
 
 
 
@@ -131,34 +123,6 @@ function App() {
     
 })
 
-
-const fetchingData = () => {
-  
-  //   axiosWithAuth()
-  //   .get("https://essentialism-bwt.herokuapp.com/api/values")
-  //   .then(res => {
-  //       console.log("res",res);
-  // setInitialState(
-  //  { ...initialState,
-  //     values: [
-  //     res.data
-  //   ]
-  // }
-  // )
-  
- 
-      
-      
-  // })
-  // .catch(err => {
-  //     console.log("err", err);
-  // })
-  
-
-}
-
-
-
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -167,7 +131,7 @@ const fetchingData = () => {
     .then(res => {
         setProjects(res.data);
     })
-  })
+  },[])
 
 
 
@@ -183,7 +147,7 @@ const fetchingData = () => {
             formErrors={formErrors}
           />
         </Route>
-     <ValuesContext.Provider value = {{selected, fetchingData, initialState}}>
+     <ValuesContext.Provider>
     <Switch>
 
       <Route path='/dashboard'>
@@ -195,7 +159,7 @@ const fetchingData = () => {
       
       
         <PrivateRoute path='/valuelist'>
-          <ValueList selectItemList = {selectItemList}  />
+          <ValueList  />
         </PrivateRoute>
        
         <DashContext.Provider value={{projects}}>
