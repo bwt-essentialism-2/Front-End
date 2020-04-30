@@ -35,7 +35,6 @@ const ValueList = props => {
 
 
 
-    console.log("data", props.values);
 
 
     return (
@@ -47,7 +46,6 @@ const ValueList = props => {
             <div id="valueGrid">
 
                 {props.values?.map(value => {
-                    console.log(value)
                     return (
                         <ValueCard value={value} key={value.id} selectItemList={props.selectItemList} />
                     )
