@@ -35,11 +35,13 @@ body{
     justify-content: center;
     padding-top: 6rem;
     background-color: #69a069;
+    padding-bottom: 20rem;
 
 }
 
 .container-fluid .row{
     padding-top: 4rem;
+    padding-bottom: 12rem;
 }
 
 .btn.btn-outline-success:hover{
@@ -48,11 +50,37 @@ body{
 }
 
 input{
-    border-color: #69a069;
+    border-color: grey;
+    padding:10px;
+    font-size: 16px;
+    border: 2px solid; 
+    width: 30rem;
+    height: 3rem;
+
 }
 
+.theList {
+    color: black;
+    background-color: rgba(255, 255, 255, .5);
+    padding: 1.8rem ;
+    margin-top: 2rem;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+
 button{
-    background-color: #69a069;
+    background-color: green;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid;
+
+}
+
+button:hover{
+    background-color: lightgreen;
 }
 
 single-body{

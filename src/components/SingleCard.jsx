@@ -1,10 +1,8 @@
-import React, {Component, useContext, useEffect} from 'react';
-// import reactDOM from 'react-dom';
+import React, {Component} from 'react';
 import './DashboardStyle.css';
 import EssentialCard from './EssentialCard';
-import {DashContext} from "../contexts";
-// import DashboardCard from './DashboardCard'
-import {axiosWithAuth} from "../utils/axiosAuth";
+import { DashContext } from '../contexts';
+// import { axiosWithAuth } from "../src/utils/axiosAuth";
 
 
 class SingleCard extends Component {
@@ -17,13 +15,17 @@ constructor(props){
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
 
-    const {projects} = useContext(DashContext);
-
 }
 
-
-
-
+// componentDidMount(){
+// axiosWithAuth()
+//         .post("https://essentialism-bwt.herokuapp.com/api/users/2/projects", newItem)
+//         .then(res => {
+//             console.log(res);
+//             this.setState({newItem: res.data})
+//         })
+//     }
+    
 
 addItem(e) {
     if (this.inputElement.value !== '') {
@@ -31,14 +33,6 @@ addItem(e) {
             text: this.inputElement.value,
             key: Date.now()
         };
-
-        axiosWithAuth()
-        .post("https://essentialism-bwt.herokuapp.com/api/projects", newItem)
-        .then(res => {
-            console.log(res);
-        })
-
-          
        this.setState((prevState) => {
            return {
                items: prevState.items.concat(newItem)
@@ -61,16 +55,16 @@ addItem(e) {
 
     render() {
         return(
+            <DashContext.Provider>
             <div className='container-fluid'>
             <div className="card-2 text-center">
                 <div className="overflow">
                     <img src={''} alt='' className='card-img-topf'/>
                     </div>
                         <div className='card-body'>
-                        <h3 className='card-title'>{''}this is where the title of the card will go.</h3>
-                        <p className='card-text text-secondary'>{''}
-                        This is where the text for the card will go. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, repudiandae earum quae quo dolorum natus soluta libero odio recusandae minima.
-                        </p>
+                        <h1 className='card-title'>{''}this is where the title of the card will go.</h1>
+                        <p className='card-text text-secondary'>{''}This is where the text for the card will go. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, repudiandae earum quae quo dolorum natus soluta libero odio recusandae minima.
+</p>
                         <form onSubmit={this.addItem}>
                         <input ref={(a) => this.inputElement = a} 
                         placeholder='Inspiration'>
@@ -84,18 +78,7 @@ addItem(e) {
                 </div>
             </div>
             </div>
-            // <div className='className="card text-center'>
-            //     <div className='head'>
-            //         <form onSubmit={this.addItem}>
-            //             <input ref={(a) => this.inputElement = a} 
-            //                 placeholder='Inspiration'>
-            //             </input>
-            //             <button type='submit'>Add</button>
-            //             {/* <DashboardCard /> */}
-            //             <EssentialCard entries={this.state.items}/>  
-            //         </form>
-            //     </div>
-            // </div>
+            </DashContext.Provider>
         )
     }
 }

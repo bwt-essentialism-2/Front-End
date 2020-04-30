@@ -42,11 +42,6 @@ const initalFormErrors = {
 
 function App() {
 
-
-
-
-
-
   const [formValues, setFormValues] = useState(initalFormValues)
   const [formErrors, setFormErrors] = useState(initalFormErrors)
   const [user, setUser] = useState({})
@@ -195,15 +190,13 @@ const fetchingData = () => {
         </PrivateRoute>
        
         <DashContext.Provider value={{projects}}>
-
         <PrivateRoute path='/dashboard'>
           <Dashboard />
         </PrivateRoute>
 
         <Route path='/singlecard'>
         <SingleCard />
-      </Route>
-
+        </Route>
         </DashContext.Provider>
   
         <Route path='/'>

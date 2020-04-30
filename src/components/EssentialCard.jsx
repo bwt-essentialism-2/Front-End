@@ -6,7 +6,7 @@ class EssentialCard extends Component {
         this.createTasks = this.createTasks.bind(this);
     }
     createTasks(item) {
-    return <p onClick={() =>this.delete(item.key)}
+    return <p onClick={() => this.delete(item.key)}
               key={item.key}>{item.text}</p>
     }
 
