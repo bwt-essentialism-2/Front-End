@@ -1,4 +1,4 @@
-import React,{ Component, useContext } from 'react';
+import React,{ useContext } from 'react';
 import DashboardCard from './DashboardCard';
 import { connect } from 'react-redux';
 import {ValuesContext} from "../contexts/index";
@@ -14,6 +14,7 @@ const Dashboard = props => {
 
 
     return (
+        <ValuesContext.Provider value={[]}>
         <div className='container-fluid d-flex justify-content-center'>
             <div className='row'>
                 <div className='col-md-4'>
@@ -27,6 +28,7 @@ const Dashboard = props => {
                 </div>
             </div>
         </div>
+        </ValuesContext.Provider>
     )
 }
 
