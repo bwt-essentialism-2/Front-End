@@ -1,25 +1,32 @@
 export const initialState = {
     values: [
     ],
-    
+
 };
 
 
 
 export const reducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case 'FETCH_START':
-      return {
-        ...state
-          };
+            return {
+                ...state
+            };
         case 'FETCH_DATA':
-            console.log("action",action.payload);
+            console.log("action", action.payload);
+            return {
+                ...state,
+                values: [...state.values, action.payload]
+
+            };
+        case 'ADD_ITEM':
+            console.log("new item", action.payload);
             return {
                 ...state,
                 values: [...state.values, action.payload]
 
             }
-        
+
         default:
             return state;
 
