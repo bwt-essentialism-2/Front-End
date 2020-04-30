@@ -11,7 +11,7 @@ const Register = props => {
         onSubmitHandler,
         history,
     } = props
-
+console.log("login page");
     const classes = useStyles()
 
     const newRoute = evt => {
@@ -100,7 +100,7 @@ const Login = props => {
                     history={history}
                 />
             </Route>
-            <Route path='/'>
+            <Route exact path='/sign-up'>
                 <Register 
                    formValues={formValues}
                    onChangeHandler={onChangeHandler}
@@ -112,4 +112,4 @@ const Login = props => {
     )
 }
 
-export default Login 
+export default Login
