@@ -90,3 +90,372 @@ single-body{
     margin: 1% 0;
     height: auto;
 }
+
+
+
+
+
+
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/quicksand/v20/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-xw.ttf) format('truetype');
+  }
+  h1 {
+    font-size: 4.5rem;
+  }
+  h2 {
+    font-size: 3.5rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+    font-style: italic;
+  }
+  p,
+  li a,
+  button {
+    font-size: 2.2rem;
+    font-family: 'Quicksand', sans-serif;
+  }
+  body {
+    min-height: 100vh;
+  }
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: #141414;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+  }
+  p {
+    margin: 2rem 0;
+  }
+  .header-container {
+    width: 100%;
+    padding: 4rem 0;
+    margin-bottom: 6rem;
+    border-bottom: 1px solid #141414;
+  }
+  .header-container header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media (max-width: 1000px) {
+    .header-container header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .header-container header #logo {
+    width: 5rem;
+  }
+  @media (max-width: 500px) {
+    .header-container header #logo {
+      width: 3rem;
+    }
+  }
+  .header-container header h1 {
+    color: #69a069;
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: center;
+  }
+  @media (max-width: 500px) {
+    .header-container header h1 {
+      font-size: 2.7rem;
+    }
+  }
+  .header-container header nav {
+    width: 50rem;
+  }
+  @media (max-width: 1000px) {
+    .header-container header nav {
+      margin-top: 4rem;
+    }
+  }
+  @media (max-width: 500px) {
+    .header-container header nav {
+      margin-top: 0;
+    }
+  }
+  .header-container header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  @media (max-width: 500px) {
+    .header-container header nav ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .header-container header nav ul li {
+      margin: 2rem 0;
+    }
+    .header-container header nav ul li a {
+      font-size: 2.5rem;
+    }
+  }
+  .link {
+    padding: 1rem;
+  }
+  .link:hover {
+    border-bottom: 1px solid #141414;
+  }
+  .primary-button {
+    color: white;
+    background: #181818;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #181818;
+    transition-duration: 0.1s;
+  }
+  .primary-button:hover {
+    background: #69a069;
+    border: 1px solid #69a069;
+    color: white;
+  }
+  .secondary-button {
+    color: #141414;
+    background: none;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #141414;
+  }
+  .secondary-button:hover {
+    background: #69a069;
+    border: 1px solid #69a069;
+    color: white;
+  }
+  html ::-webkit-scrollbar {
+    width: 2rem;
+  }
+  html ::-webkit-scrollbar-thumb {
+    background: #69a069;
+    border-radius: 10px;
+  }
+  html ::-webkit-scrollbar-thumb:hover {
+    background: #a7c8a7;
+  }
+  body {
+    background-image: url(/img/background-plant-photo.jpg);
+    background-size: cover;
+  }
+  .main-container {
+    width: 80%;
+    margin: 0 auto;
+    min-height: 100vh;
+  }
+  .main-container .top,
+  .main-container .bottom {
+    min-height: 100vh;
+    margin: 0;
+  }
+  .main-container .how {
+    text-align: center;
+  }
+  .main-container h2.content-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .main-container .content {
+    margin-bottom: 4rem;
+  }
+  .main-container .main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .main-container .main-content .content {
+    margin-bottom: 4rem;
+  }
+  @media (max-width: 1000px) {
+    .main-container .main-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+  .main-container .main-content .content-container {
+    width: 50%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  @media (max-width: 1000px) {
+    .main-container .main-content .content-container {
+      width: 100%;
+    }
+  }
+  .main-container .main-content .product-image-container {
+    box-shadow: 0 0 10px #7a7a7a;
+    background-image: url(/img/app-image-standin.png);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 50rem;
+    width: 50%;
+  }
+  @media (max-width: 1000px) {
+    .main-container .main-content .product-image-container {
+      width: 100%;
+    }
+  }
+  @media (max-width: 500px) {
+    .main-container .main-content .product-image-container {
+      width: 80%;
+      background-image: url(/img/phone-app.png);
+    }
+  }
+  .cta {
+    margin: 2rem auto;
+    text-align: center;
+  }
+  .cta button {
+    color: white;
+    background: #181818;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #181818;
+    transition-duration: 0.1s;
+    font-size: 3rem;
+  }
+  .cta button:hover {
+    background: #69a069;
+    border: 1px solid #69a069;
+    color: white;
+  }
+  .cta button a {
+    color: white;
+  }
+  .bottom {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .bottom .step {
+    box-shadow: 0 0 10px #7a7a7a;
+    width: 500px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+  }
+  .bottom .step p {
+    padding: 0 1.5rem;
+  }
+  .bottom .step .circle {
+    margin: 2rem auto 0;
+    width: 50px;
+    height: 50px;
+    box-sizing: content-box;
+    color: white;
+    padding: 20px;
+    border-radius: 50%;
+    background: #69a069;
+  }
+  .bottom .step .circle h2 {
+    padding-bottom: -1rem;
+  }
+  .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+  .cards .team-card {
+    box-shadow: 0 0 10px #7a7a7a;
+    height: 40rem;
+    width: 28rem;
+    margin: 2rem 1.5rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .cards .team-card .team-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 10rem;
+  }
+  .cards .team-card .team-description h3 {
+    margin-bottom: -2rem;
+  }
+  .cards .team-card .team-description p {
+    border-top: 1px solid #141414;
+    width: 100%;
+    font-size: 1.7rem;
+  }
+  .cards .team-card a {
+    margin-left: 1rem;
+  }
+  .cards .team-card a .github {
+    height: 3rem;
+    align-self: center;
+  }
+  .cards .team-card .team-photo {
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    height: 24rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    background-image: url(/img/profile-icon.png);
+  }
+  .cards .team-card #tim-photo {
+    background-image: url(/img/photo-tim.png);
+  }
+  .cards .team-card #rudy-photo {
+    background-image: url(/img/photo-rudy.png);
+  }
+  .cards .team-card #andrew-photo {
+    background-image: url(/img/photo-andrew.png);
+  }
+  .cards .team-card #david-photo {
+    background-image: url(/img/photo-david.png);
+  }
+  .cards .team-card #vasuki-photo {
+    background-image: url(/img/photo-vasuki.png);
+  }
+  .cards .team-card #caleb-photo {
+    background-image: url(/img/photo-caleb.png);
+  }
+  .cards .team-card #drew-photo {
+    background-image: url(/img/photo-drew.png);
+  } */

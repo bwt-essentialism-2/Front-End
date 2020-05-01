@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ValueCard from "./ValueCard";
 import ValueForm from "./ValueForm";
 import Button from '@material-ui/core/Button';
@@ -9,6 +9,8 @@ import { connect } from 'react-redux';
 
 
 const ValueList = props => {
+
+    const [newCard, setNewCard] = useState([]);
 
     const { push } = useHistory();
    
@@ -21,9 +23,11 @@ const ValueList = props => {
         props.fetchData();
     
 
-    }, [])
+    }, [props])
 
-
+    const handleCard = (id) => {
+        setNewCard([...newCard, id])
+    } 
    
 
     const nextPage = e => {
@@ -33,9 +37,9 @@ const ValueList = props => {
     }
 
 
-
-
-
+    console.log(props);
+    console.log(props.values)
+    console.log(newCard, "helllloooo")
     return (
 
         <div id="valueCont">
@@ -44,9 +48,9 @@ const ValueList = props => {
             <ValueForm values={props.values} />
             <div id="valueGrid">
 
-                {props.values?.map(value => {
+                {props.values && props.values.map(value => {
                     return (
-                        <ValueCard value={value} key={value.id} selectItemList={props.selectItemList} />
+                        <ValueCard handleCard={handleCard} value={value} key={value.id} selectItemList={props.selectItemList} />
                     )
                 }) }
 

@@ -11,12 +11,21 @@ import {selected} from '../actions/actions';
 const ValueCard = props => {
 
     const [isClicked, setIsClicked] = useState(false);
+    
 
     const toggleItem = () => {
-        {isClicked ? setIsClicked(false) : setIsClicked(true)}
+        if(isClicked) {
+            setIsClicked(false);
+            props.handleCard(props.value.id);
+        
+        } else {
+            setIsClicked(true);
+        }
         console.log( "value",props.value.value
             );
         console.log("clicked", isClicked);
+        console.log(props.newCard)
+        console.log(props.value.id);
     }
  
 
@@ -37,7 +46,7 @@ const setClickedClass = () => {
 }
 
     return (
-        <Card id = "valueCard" onClick={() => { select(); toggleItem();}}
+        <Card id = "valueCard" onClick={() => { select(); toggleItem();props.handleCard(props.value.id);}}
         
 
 

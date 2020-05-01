@@ -9,7 +9,8 @@ class SingleCard extends Component {
 constructor(props){
     super(props);
     this.state = {
-        items: []
+        items: [],
+        // newProject: [],
     };
 
     this.addItem = this.addItem.bind(this);
@@ -17,14 +18,14 @@ constructor(props){
 
 }
 
-// componentDidMount(){
-// axiosWithAuth()
-//         .post("https://essentialism-bwt.herokuapp.com/api/users/2/projects", newItem)
-//         .then(res => {
-//             console.log(res);
-//             this.setState({newItem: res.data})
-//         })
-//     }
+    // componentDidMount(){
+    // axiosWithAuth()
+    //         .post("https://essentialism-bwt.herokuapp.com/api/users/2/projects", newProject)
+    //         .then(res => {
+    //             console.log(res);
+    //             this.setState({newProject: res.data})
+    //         })
+    //     }
     
 
 addItem(e) {
@@ -64,7 +65,7 @@ addItem(e) {
                         <div className='card-body'>
                         <h1 className='card-title'>{''}this is where the title of the card will go.</h1>
                         <p className='card-text text-secondary'>{''}This is where the text for the card will go. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, repudiandae earum quae quo dolorum natus soluta libero odio recusandae minima.
-</p>
+                        </p>
                         <form onSubmit={this.addItem}>
                         <input ref={(a) => this.inputElement = a} 
                         placeholder='Inspiration'>

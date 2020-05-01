@@ -19,13 +19,13 @@ const Dashboard = props => {
         <div className='container-fluid d-flex justify-content-center'>
             <div className='row'>
                 <div className='col-md-4'>
-                    <DashboardCard imgsrc={''} title={''} para={''}/>
+                    <DashboardCard />
                 </div>
                 <div className='col-md-4'>
-                    <DashboardCard imgsrc={''} title={''} para={''}/>
+                    <DashboardCard />
                 </div>
                 <div className='col-md-4'>
-                    <DashboardCard imgsrc={''} title={''} para={''}/>
+                    <DashboardCard />
                 </div>
             </div>
         </div>
